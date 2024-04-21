@@ -1,0 +1,8 @@
+.home-wrapper {
+    margin: 8vh 0 0 15rem;
+    background: white;
+    /* background: linear-gradient(90deg, rgba(23,23,26,1) 44%, rgba(24,24,24,1)); */
+    width: 100%;
+    min-height: 100vh;
+    background: lightblue;
+}

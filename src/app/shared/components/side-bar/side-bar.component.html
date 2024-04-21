@@ -1,0 +1,11 @@
+<div class="side-bar">
+    <section class="side-bar-main">
+        <ul class="side-bar__list list-one">
+            @for (item of mainMenu.defaultOptions; track item.name){<li [routerLink]="item.router">
+                <div class="list-wrapper-item">
+                    <span class="side-bar__list list-label">{{item.name}}</span>
+                </div>
+            </li>}
+        </ul>
+    </section>
+</div>

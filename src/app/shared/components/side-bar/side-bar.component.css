@@ -1,0 +1,33 @@
+.side-bar {
+    width: 12rem;
+    height: 100vh;
+    position: fixed;
+    top: 8vh;
+    left: 0;
+    padding: .5rem 1rem;
+    /* background-color: red; */
+}
+
+.side-bar__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    opacity: .8;
+}
+
+.side-bar__list .list-label {
+    font-size: 90%;
+    font-weight: 500;
+}
+
+.side-bar__list .list-wrapper-item {
+    font-size: var(--font-size-1);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+
+.side-bar__list li {
+    cursor: pointer;
+}
