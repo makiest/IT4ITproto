@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { WelcomePageComponent } from './components/welcome-page/welcome-page.component';
+import { FirewallRulesPageComponent } from '../networking/components/firewall-rules-page/firewall-rules-page.component';
 
 export const homeRoutes: Routes = [
     {
@@ -21,5 +22,9 @@ export const homeRoutes: Routes = [
     {
       path: '**',
       redirectTo: 'welcome'
+    },
+    {
+      path: 'networking/firewallRules',
+      component: FirewallRulesPageComponent
     },
 ];

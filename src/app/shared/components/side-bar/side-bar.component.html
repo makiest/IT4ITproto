@@ -1,9 +1,20 @@
 <div class="side-bar">
     <section class="side-bar-main">
-        <ul class="side-bar__list list-one">
+        <ul class="side-bar__list">
             @for (item of mainMenu.defaultOptions; track item.name){<li [routerLink]="item.router">
-                <div class="list-wrapper-item">
-                    <span class="side-bar__list list-label">{{item.name}}</span>
+                <div class="side-bar__list .list-wrapper-item">
+                    <span class="side-bar__list list-label" (click)="showSubmenu(item.name)">{{item.name}}</span>
+                    @if(subMenuShow && checkSubMenu(item.name)){
+                        <nav>
+                        <ul class="side-bar__sublist">
+                            @for (subItem of item.subItems; track subItem.name){<li [routerLink]="subItem.router">
+                                <div class="side-bar__list .list-wrapper-item">
+                                    <span (click)="testComponent(subItem)"> {{subItem.name}}</span>
+                                </div>
+                            </li>}   
+                        </ul>
+                        </nav>
+                    }
                 </div>
             </li>}
         </ul>

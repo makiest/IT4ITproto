@@ -13,36 +13,63 @@ export class SideBarComponent {
 
   constructor(private sideBarRouter:Router){}
 
+  subMenuShow = false
   ngOnInit(): void {
     this.mainMenu.defaultOptions = [
       {
         name: 'Home',
         icon: '',
         router: ['/', 'Welcome'],
-        subItems: {}
+        subItems: []
       },
       {
         name: 'Compuing',
         icon: '',
         router: ['/', 'computing'],
-        subItems: {}
+        subItems: []
       },
       {
         name: 'Networking',
         icon: '',
         router: ['/', 'networking'],
-        subItems: {
-          name: 'Firewall',
+        subItems: [{
+          name: 'Firewall Rules',
           icon: '',
-          router: ['/', 'networking/firewall'],
+          router: ['/', 'networking/firewallRules'],
+        },{
+          name: 'Firewall Objects',
+          icon: '',
+          router: ['firewallObjects'],
         }
+      ]
       },
       {
-        name: 'Infrastrucutre',
+        name: 'Infrastructure',
         icon: '',
-        router: ['/', 'infrasructure'],
-        subItems: {}
+        router: ['/', 'infrastructure'],
+        subItems: []
       },
     ]
+  }
+
+  showSubmenu(selected:string): void{
+    const subMenu = this.mainMenu.defaultOptions.filter(obj => {return obj.name == selected})
+    if (Object.keys(subMenu[0]?.subItems).length !== 0){
+    this.subMenuShow = !this.subMenuShow
+    }
+  }
+
+  checkSubMenu(selected:string){
+    const subMenu = this.mainMenu.defaultOptions.filter(obj => {return obj.name == selected})
+    if (Object.keys(subMenu[0]?.subItems).length !== 0 ){
+      return true
+    }
+    else {
+      return false
+    }
+  }
+
+  testComponent(selected:Array<any>): void {
+    console.log(selected)
   }
 }
